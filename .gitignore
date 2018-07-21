@@ -1,0 +1,6 @@
+.idea/
+*.log
+sessions/
+errors/
+*/*/*.bak
+*/*/*.bak

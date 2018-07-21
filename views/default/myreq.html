@@ -1,0 +1,39 @@
+{{extend 'layout.html'}}
+<h4>Request a book</h4>
+<br />
+{{=form}}
+{{if len(k)!=0:}}
+<h4>
+    My requests
+</h4>
+<br />
+<table class="table">
+    	<tr>
+		<th>
+			<h5>Book Name</h5>
+		</th>
+		<th>
+			<h5>Book Author</h5>
+		</th>
+		<th>
+			<h5>Status</h5>
+		</th>
+	</tr>
+    {{for row in k:}}
+    <tr>
+        <td>
+            {{=row.bookname}}
+        </td>
+        <td>
+            {{=row.Author_Name}}
+        </td>
+        <td>
+            {{=row.Status}}
+        </td>
+   </tr>
+    {{pass}}
+</table>
+{{else:}}
+<h5>You have no requests </h5>
+{{pass}}
+<br />

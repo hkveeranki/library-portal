@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+{{=form}}
+{{if not rows:}}
+<p></p>
+{{else:}}
+{{=SQLTABLE(rows,headers={"table1.book_name":"Book Name" ,"table1.book_number":"Book Number" ,"table1.Publication_Date":"Publication Date" ,"table1.num_of_copies_bought":"Number of copies Bought" ,"table1.num_of_copies_left":"Number of copies Left" ,"table1.Author_Name":"Author Name "},_class="table")}}
+{{pass}}

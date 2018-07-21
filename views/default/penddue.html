@@ -1,0 +1,57 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+{{if len(k)!=0:}}
+<h2>
+    Pending Dues
+</h2>
+<table class="table">
+    	<tr>
+		<th>
+			<h5>Borrowal Id</h5>
+		</th>
+		<th>
+			<h5>Book Name</h5>
+		</th>
+		<th>
+			<h5>Book Number</h5>
+		</th>
+		<th>
+			<h5>Book Issued to</h5>
+		</th>
+            <th>
+			<h5>Roll Number</h5>
+		</th>
+		<th>
+			<h5>Email Id</h5>
+		</th>
+		<th>
+			<h5>Phone Number</h5>
+		</th>
+		<th>
+			<h5>Date Of Issue</h5>
+		</th>
+            <th>
+			<h5>Due Date</h5>
+		</th>
+            <th>
+			<h5>Status</h5>
+		</th>
+	</tr>
+    {{for row in k:}}
+    <tr>
+        <td>{{=row.id}}</td>
+        <td>{{=row.book_name}}</td>
+        <td>{{=row.book_number}}</td>
+        <td>{{=row.book_issued_to}}</td>
+        <td>{{=row.Rollno}}</td>
+        <td>{{=row.email}}</td>
+        <td>{{=row.Phone_No}}</td>
+        <td>{{=row.Date_of_Issue}}</td>
+        <td>{{=row.Due_Date}}</td>
+        <td>{{=row.Status}}</td>
+    </tr>
+    {{pass}}
+</table>
+{{else:}}
+<h2>No pending dues</h2>
+{{pass}}

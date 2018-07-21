@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+<h4>Details</h4>
+<img src="{{=URL('download',args=item.image)}}">
+<br />
+<br />
+<table class="table1">
+    	<tr>
+		<th><h5>Book Name:- </h5></th> 
+		<td>{{=item.book_name}}</td>
+        </tr>
+        <tr>
+		<th><h5>Book Number:- </h5></th>
+		<td>{{=item.book_number}}</td>
+        </tr>
+        <tr>
+		<th><h5>Publication Date:- </h5></th>
+		<td>{{=item.Publication_Date}}</td>
+        </tr>
+        <tr>
+		<th><h5>Number of copies Bought:- </h5></th>
+		<td>{{=item.num_of_copies_bought}}</td>
+        </tr>
+		<tr>
+		<th><h5>Number of copies Left:- </h5></th>
+		<td>{{=item.num_of_copies_left}}</td>
+        </tr>
+        <tr>
+		<th><h5>{{=name}}:- </h5></th>
+		<td>{{=item.Author_Name}}</td>
+		</tr>
+        <tr>
+		<th><h5>Category:- </h5></th>
+		<td>{{=item.Category}}</td>
+	</tr>
+</table>
+<div class="cls3">
+{{=A('Back to Store', _href="https://hector7.pythonanywhere.com/",_class="btn",_alt="Cannot be loaded")}}
+</div>

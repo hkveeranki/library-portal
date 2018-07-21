@@ -1,0 +1,145 @@
+{{extend 'layout.html'}}
+{{if len(lis)!=0:}}
+<h4>The following Members has been given a fine due today</h4>
+<br />
+<p>count is {{=len(lis)}}</p>
+<table class="table">
+    <tr>
+        <td>
+            <h5>
+            Name
+            </h5>
+        </td>
+        <td>
+            <h5>
+                Email Id
+            </h5>
+            </td>
+        <td>
+            <h5>
+                Roll Number
+            </h5>
+        </td>
+        <td>
+            <h5>
+                Phone Number
+            </h5>
+        </td>
+        </tr>
+    {{for row in lis:}}
+    <tr>
+        <td>
+            {{=(row.first_name+" "+row.last_name)}}
+        </td>
+        <td>
+            {{=row.email}}
+        </td>
+        <td>
+            {{=row.Roll_Number}}
+        </td>
+        <td>
+            {{=row.Phone_no}}
+        </td>
+    </tr>
+    {{pass}}
+    </table>
+{{else:}}
+<h4>No Dues added today </h4>
+{{pass}}
+<br />
+{{if len(lis1)!=0:}}
+<h4>The following Members have Due date from 4 days from today</h4>
+<br />
+    <p>count is {{=len(lis1)}}</p>
+<table class="table">
+    <tr>
+        <th>
+            <h5>
+            Name
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Email Id
+            </h5>
+            </th>
+        <th>
+            <h5>
+                Roll Number
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Phone Number
+            </h5>
+        </th>
+        </tr>
+    {{for row in lis1:}}
+    <tr>
+        <td>
+            {{=(row.first_name+" "+row.last_name)}}
+        </td>
+        <td>
+            {{=row.email}}
+        </td>
+        <td>
+            {{=row.Roll_Number}}
+        </td>
+        <td>
+            {{=row.Phone_no}}
+        </td>
+    </tr>
+    {{pass}}
+    </table>
+{{else:}}
+<h4>No one have Due date 4 days from today </h4>
+{{pass}}
+<br />
+{{if len(lis2)!=0:}}
+<h4>The following Members has due date as today</h4>
+<br />
+<p>count is {{=len(lis2)}}</p>
+<table class="table">
+    <tr>
+        <th>
+            <h5>
+            Name
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Email Id
+            </h5>
+            </th>
+        <th>
+            <h5>
+                Roll Number
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Phone Number
+            </h5>
+        </th>
+        </tr>
+    {{for row in lis2:}}
+    <tr>
+        <td>
+            {{=(row.first_name+" "+row.last_name)}}
+        </td>
+        <td>
+            {{=row.email}}
+        </td>
+        <td>
+            {{=row.Roll_Number}}
+        </td>
+        <td>
+            {{=row.Phone_no}}
+        </td>
+    </tr>
+    {{pass}}
+    </table>
+<br />
+{{else:}}
+<h4>No Members have due date on today </h4>
+{{pass}}

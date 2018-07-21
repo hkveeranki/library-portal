@@ -1,0 +1,55 @@
+{{extend 'layout.html'}}
+{{if len(k)!=0:}}
+<h4>
+    Books Taken
+</h4>
+<table class="table">
+	<tr>
+		<th>
+			<h5>
+				Borrowal Id
+			</h5>
+		</th>
+		<th>
+			<h5>
+				Book Number
+			</h5>
+		</th>
+		<th>
+			<h5>
+				Book Name
+			</h5>
+		</th>
+		<th>
+			<h5>
+				Issued Date
+			</h5>
+		</th>
+		<th>
+			<h5>
+				Due Date
+			</h5>
+		</th>
+	</tr>
+	{{for row in k:}}
+	<tr>
+		<td>
+			{{=row.id}}
+			<td>
+				{{=row.book_number}}
+			</td>
+			<td>
+				{{=row.book_name}}
+			</td>
+			<td>
+				{{=row.Date_of_Issue}}
+			</td>
+			<td>
+				{{=row.Due_Date}}
+			</td>
+		</tr>
+		{{pass}}
+	</table>
+	{{else:}}
+	<h4>No borrowals </h4>
+	{{pass}}

@@ -1,0 +1,80 @@
+.table{
+    border: 1.5px solid Black;
+    border-radius: 10px;
+    text-align:center;
+}
+.table th,tr{
+    border: 1.5px solid White;
+}
+.table th {
+    background-color:#F5882D;
+     color: #FAFAEE;
+    border-top-left-radius:10px;
+    text-align:center;
+    border-top-right-radius:10px;
+}
+.table td{
+     background-color:#FCFCE4;
+     color: Black;
+    text-align:center;
+    
+    border: 1.5px solid #F2F2F2;
+}
+.table1{
+border: 1.5px solid Black;
+border-radius: 10px;
+width:40%;
+}
+.table1 th,tr{
+    border: 1.5px solid White;
+}
+.table1 th {
+    background-color:#F5882D;
+     border-top-left-radius:10px;
+     border-bottom-left-radius:10px;
+     border-top-right-radius:10px;
+     border-bottom-right-radius:10px;
+     color: #FAFAEE;
+    text-align:center;
+width:1%;
+}
+.table1 td{
+     background-color:#FCFCE4;
+     color: Black;
+    text-align:center;
+  border-top-left-radius:10px;
+     border-bottom-left-radius:10px;
+     border-top-right-radius:10px;
+     border-bottom-right-radius:10px;
+    padding:10px;
+    width:4%;
+}
+img{
+    float:right;
+}
+header{
+    background-image:url('http://cmster.com/media/T1xUcXRs2S5DO1KcpktR4THHckc7bKufJqqc8YbPGvCle5Lr3vborOpAtp115TQq.jpg');
+    /*height:109px;*/
+color:#FFE55A;
+}
+#myid{
+position:fixed;
+    width:100%;
+}
+.cls .btn{
+color:#fff;background-color:#51a351;*background-color:#499249;
+}
+.cls .btn,.cls1 .btn,.cls2 .btn,.cls3 .btn{
+font-size:medium;
+}
+footer{
+color:White;
+    font-size:medium;
+    font-family:Monaco;
+    text-align:center;
+    background-image:url('http://web.iiit.ac.in/~hemanth.veeranki/cover.png');
+}
+footer{
+   bottom:0;
+   /* Height of the footer */
+}
