@@ -2,18 +2,22 @@
 {{if(len(rows1)!=0):}}
 <h3>
     To be Purchased Books
-    </h3>
-<table class="table1" style="width:60%">
+</h3>
+<table class="table-bordered table-striped" style="width:60%">
+    <thead>
     <tr>
         <th><h5>Book Name</h5></th>
         <th>Book Author</th>
     </tr>
+    </thead>
+    <tbody>
     {{for item in rows1:}}
     <tr>
         <td>{{=item.bookname}}</td>
         <td>{{=item.Author_Name}}</td>
     </tr>
-    {{pass}}
+    </tbody>
+{{pass}}
 </table>
 {{pass}}
 <h3>
@@ -23,17 +27,22 @@
 {{if(len(rows2)!=0):}}
 <h3>
     Declined Purchase requests
-    </h3>
-<table class="table1" style="width:60%">
+</h3>
+<table class="wy-table-bordered-rows table-bordered table-hover table-condensed"
+       style="width:60%">
+    <thead>
     <tr>
         <th><h5>Book Name</h5></th>
         <th>Book Author</th>
     </tr>
+    </thead>
+    <tbody>
     {{for item in rows2:}}
     <tr>
         <td>{{=item.bookname}}</td>
         <td>{{=item.Author_Name}}</td>
     </tr>
-    {{pass}}
+    </tbody>
+{{pass}}
 </table>
 {{pass}}

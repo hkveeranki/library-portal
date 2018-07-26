@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+{{for (key,(users_list,message,users_count)) in data.items():}}
+<h4>{{=message}}</h4>
+<br/>
+{{if users_count != 0:}}
+<table class="table-bordered table-striped">
+    <thead>
+    <tr>
+        <td>
+            <h5>
+                Name
+            </h5>
+        </td>
+        <td>
+            <h5>
+                Email Id
+            </h5>
+        </td>
+        <td>
+            <h5>
+                Roll Number
+            </h5>
+        </td>
+        <td>
+            <h5>
+                Fine
+            </h5>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    {{for row in users_list:}}
+    <tr>
+        <td>
+        {{=(row.first_name+" "+row.last_name)}}
+        </td>
+        <td>
+        {{=row.email}}
+        </td>
+        <td>
+        {{=row.Roll_Number}}
+        </td>
+        <td>
+            Rs {{=row.Fines_due}}
+        </td>
+    </tr>
+    {{pass}}
+    </tbody>
+</table>
+{{pass}}
+{{pass}}

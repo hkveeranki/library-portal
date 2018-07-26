@@ -1,10 +1,10 @@
 {{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
 {{extend 'layout.html'}}
-{{if len(k)!=0:}}
+{{if records:}}
 <h2>
     Pending Dues
 </h2>
-<table class="table">
+<table class="table-bordered table-hover table-striped">
     	<tr>
 		<th>
 			<h5>Borrowal Id</h5>
@@ -37,7 +37,7 @@
 			<h5>Status</h5>
 		</th>
 	</tr>
-    {{for row in k:}}
+    {{for row in records:}}
     <tr>
         <td>{{=row.id}}</td>
         <td>{{=row.book_name}}</td>

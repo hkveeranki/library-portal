@@ -1,0 +1,71 @@
+{{extend 'layout.html'}}
+{{=form}}
+{{if 'records' in globals():}}
+{{if records:}}
+<h4>
+    Books Rented
+</h4>
+<table class="table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>
+            <h5>
+                Borrowal Id
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Book Number
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Book Name
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Issued Date
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Due Date
+            </h5>
+        </th>
+        <th>
+            <h5>
+                Status
+            </h5>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{for row in records:}}
+    <tr>
+        <td>
+        {{=row.id}}
+        <td>
+        {{=row.book_number}}
+        </td>
+        <td>
+        {{=row.book_name}}
+        </td>
+        <td>
+        {{=row.Date_of_Issue}}
+        </td>
+        <td>
+        {{=row.Due_Date}}
+        </td>
+        <td>
+        {{=row.Status}}
+        </td>
+
+    </tr>
+    {{pass}}
+    </tbody>
+</table>
+{{else:}}
+<h4>No borrowal records </h4>
+{{pass}}
+{{pass}}

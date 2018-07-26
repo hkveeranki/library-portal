@@ -1,56 +1,30 @@
-{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{
+left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())
+}}
 {{extend 'layout.html'}}
+
 <h3>
     Books in Library
 </h3>
-{{if len(rows1)!=0:}}
-<h4>
-    Reference Books
-</h4>
-<ul>
-{{for item in rows1:}}
-<li>
-{{=A(item.book_name,_href=URL('default','view',args=item.book_number))}}
-</li>
+{{for category in categories:}}
+<table class="table-hover table-condensed">
+{{if results[category]:}}
+    <thead>
+    <tr>
+        <th class=".active">
+        <h4>{{=category}}</h4>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{for item in results[category]:}}
+    <tr>
+        <td>
+        {{=A(item.book_name,_href=URL('default','view',args=item.book_number))}}
+        </td>
+    </tr>
+    {{pass}}
+    </tbody>
+</table>
 {{pass}}
-</ul>
-{{pass}}
-<br />
-{{if len(rows2)!=0:}}
-<h4>
-    Normal Books
-</h4>
-<ul>
-{{for item in rows2:}}
-<li>
-{{=A(item.book_name,_href=URL('default','view',args=item.book_number))}}
-</li>
-{{pass}}
-    </ul>
-{{pass}}
-<br />
-{{if len(rows3)!=0:}}
-<h4>
-    Journals
-</h4>
-<ul>
-{{for item in rows3:}}
-<li>
-{{=A(item.book_name,_href=URL('default','view',args=item.book_number))}}
-</li>
-{{pass}}
-    </ul>
-{{pass}}
-<br />
-{{if len(rows4)!=0:}}
-<h4>
-    Magazines
-</h4>
-<ul>    
-{{for item in rows4:}}
-<li>
-{{=A(item.book_name,_href=URL('default','view',args=item.book_number))}}
-</li>
-{{pass}}
-</ul>
 {{pass}}

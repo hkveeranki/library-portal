@@ -11,7 +11,7 @@
 
 if not request.env.web2py_runtime_gae:
     ## if NOT running on Google App Engine use SQLite or other DB
-    db = DAL('sqlite://storage.sqlite',pool_size=1,check_reserved=['all'])
+    db = DAL('sqlite://storage.sqlite', pool_size=1, check_reserved=['all'])
 else:
     ## connect to Google BigTable (optional 'google:datastore://namespace')
     db = DAL('google:datastore+ndb')
@@ -46,16 +46,17 @@ auth = Auth(db)
 service = Service()
 plugins = PluginManager()
 from gluon.tools import Crud
+
 crud = Crud(db)
 ## create all tables needed by auth if not custom tables
-auth.settings.extra_fields['auth_user']= [
-  Field('Roll_Number','integer',label='UID/Roll Number'), 
-  Field('Phone_no',requires=IS_MATCH('\d{10}')),
-  Field('Fines_due','integer',readable=False,writable=False,default=0)
-  ]
+auth.settings.extra_fields['auth_user'] = [
+    Field('Roll_Number', 'integer', label='UID/Roll Number'),
+    Field('Phone_no', requires=IS_MATCH('\d{10}')),
+    Field('Fines_due', 'integer', readable=False, writable=False, default=0)
+]
 auth.settings.create_user_groups = True
 auth.define_tables(username=False, signature=False)
-db.auth_user.Roll_Number.requires=IS_NOT_IN_DB(db,db.auth_user.Roll_Number)
+db.auth_user.Roll_Number.requires = IS_NOT_IN_DB(db, db.auth_user.Roll_Number)
 ## configure email
 mail = auth.settings.mailer
 mail.settings.server = 'smtp.gmail.com:587'
@@ -71,6 +72,7 @@ auth.settings.login_next = URL('index')
 ## if you need to use OpenID, Facebook, MySpace, Twitter, Linkedin, etc.
 ## register with janrain.com, write your domain:api_key in private/janrain.key
 from gluon.contrib.login_methods.janrain_account import use_janrain
+
 use_janrain(auth, filename='private/janrain.key')
 #########################################################################
 ## Define your tables below (or better in another model file) for example

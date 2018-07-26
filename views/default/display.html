@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-{{if len(k)!=0:}}
+{{if len(records)!=0:}}
 <h4>
     Books Taken
 </h4>
@@ -31,7 +31,7 @@
 			</h5>
 		</th>
 	</tr>
-	{{for row in k:}}
+	{{for row in records:}}
 	<tr>
 		<td>
 			{{=row.id}}
